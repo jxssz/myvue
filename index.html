@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+	<!-- https://www.jianshu.com/p/c0168b516299 -->
 	<head>
 		<meta charset="utf-8">
 		<title></title>
@@ -26,6 +27,7 @@
 			// 将所有查询到的object进行拦截性转化
 			Object.defineProperty(obj, key, {
 				get() {
+					dep.addSub(value)
 					return value
 				},
 				set(newVal) {
